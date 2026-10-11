@@ -1,42 +1,37 @@
 # cv-template
 
-A clean, ATS-friendly CV template in LaTeX. One shared style, many CV variants — keep a separate version per role (e.g. data, cloud, AI) without duplicating the design.
+A clean, ATS-friendly CV template in LaTeX.
 
 ## Structure
 
 ```
+main.tex          # entry point — pick and order sections here
+sections/         # header, summary, skills, experience, publications,
+                  # projects, education, certifications, speaking
 shared/
   style.sty       # page layout, packages, spacing
   colors.tex      # color palette
   commands.tex    # \cvname, \cvsection, \cvsubsection, \cvproject, ...
-example/
-  main.tex        # entry point for one CV variant
-  sections/       # header, summary, skills, experience, publications,
-                  # projects, education, certifications, speaking
 ```
 
 ## Usage
 
 1. Click **Use this template** on GitHub (or clone the repo).
-2. Edit the files in `example/sections/` with your own details.
+2. Edit the files in `sections/` with your own details.
 3. Build:
 
 ```bash
 make
 ```
 
-The PDF is written to `example/main.pdf`. Requires a TeX distribution with `latexmk` (TeX Live, MacTeX, or MiKTeX).
-
-### Multiple variants
-
-Copy `example/` to a new folder (e.g. `data/`), tailor its sections, and run `make` again — every folder with a `main.tex` is built. You can also build a single one with `make data`.
+The PDF is written to `main.pdf`. Requires a TeX distribution with `latexmk` (TeX Live, MacTeX, or MiKTeX).
 
 ### Customizing
 
+- **Sections:** the `\input` lines in `main.tex` — reorder them, or comment one out to drop a section (e.g. Publications or Speaking if you don't have any)
 - **Colors:** `shared/colors.tex`
 - **Margins, spacing, fonts:** `shared/style.sty`
 - **Section and entry layout:** `shared/commands.tex`
-- **Section order:** the `\input` lines in each variant's `main.tex` — comment one out to drop a section (e.g. Publications or Speaking if you don't have any)
 
 ## Commands
 
@@ -52,7 +47,7 @@ Copy `example/` to a new folder (e.g. `data/`), tailor its sections, and run `ma
 
 ## CI
 
-GitHub Actions builds every variant on push and uploads the PDFs as a workflow artifact.
+GitHub Actions builds `main.pdf` on push and uploads it as a workflow artifact.
 
 ## License
 
