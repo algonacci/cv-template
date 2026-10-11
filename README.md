@@ -11,7 +11,8 @@ shared/
   commands.tex    # \cvname, \cvsection, \cvsubsection, \cvproject, ...
 example/
   main.tex        # entry point for one CV variant
-  sections/       # header, summary, skills, certifications, projects, experience, education
+  sections/       # header, summary, skills, experience, publications,
+                  # projects, education, certifications, speaking
 ```
 
 ## Usage
@@ -35,7 +36,7 @@ Copy `example/` to a new folder (e.g. `data/`), tailor its sections, and run `ma
 - **Colors:** `shared/colors.tex`
 - **Margins, spacing, fonts:** `shared/style.sty`
 - **Section and entry layout:** `shared/commands.tex`
-- **Section order:** the `\input` lines in each variant's `main.tex`
+- **Section order:** the `\input` lines in each variant's `main.tex` — comment one out to drop a section (e.g. Publications or Speaking if you don't have any)
 
 ## Commands
 
