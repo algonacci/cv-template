@@ -1,0 +1,42 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{style}[2026/05/13 Shared CV styling]
+
+\RequirePackage[
+  top=1.8cm,
+  bottom=1.8cm,
+  left=1.8cm,
+  right=1.8cm,
+  footskip=0.8cm
+]{geometry}
+\RequirePackage{enumitem}
+\RequirePackage{parskip}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage{titlesec}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{iftex}
+\RequirePackage{fontawesome5}
+\RequirePackage{setspace}
+
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+  \RequirePackage[utf8]{inputenc}
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage{lmodern}
+\fi
+
+\input{../shared/colors.tex}
+\input{../shared/commands.tex}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.2em}
+\setstretch{1.08}
+\setlist[itemize]{leftmargin=1.2em, topsep=0.15em, itemsep=0.1em, parsep=0em}
+\titleformat{\section}{\normalfont}{}{0pt}{}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=Accent,
+}

@@ -1,0 +1,27 @@
+% Name at the top of the header
+\newcommand{\cvname}[1]{{\fontsize{20pt}{24pt}\selectfont\textbf{#1}}}
+
+% Section heading with a thin rule underneath
+\newcommand{\cvsection}[1]{%
+  \par
+  \vspace{0.35cm}%
+  {\large\textbf{#1}}\par
+  \vspace{0.08cm}%
+  {\color{Rule}\hrule height 0.6pt}%
+  \vspace{0.12cm}%
+}
+
+% \cvsubsection{Organization}{Date range}{Role / degree}
+\newcommand{\cvsubsection}[3]{%
+  \textbf{#1} \hfill {\color{SecondaryText}\small #2}\par
+  {\color{SecondaryText}\textit{#3}}\par
+}
+
+% \cvproject{Project name}{Short label shown on the right}
+\newcommand{\cvproject}[2]{%
+  \textbf{#1}\hfill {\color{SecondaryText}\small #2}\par
+}
+
+\newcommand{\cvtagline}[1]{{\color{SecondaryText}#1}\par}
+\newcommand{\cvcontact}[1]{{\small #1}\par}
+\newcommand{\cvtech}[1]{{\color{SecondaryText}\small #1}\par}
